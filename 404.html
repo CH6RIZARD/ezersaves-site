@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EZER</title>
+<script>
+// Trailing-slash URLs (/privacy/) go to their page (/privacy). A real privacy/ folder would make /privacy itself redirect, so this lives in 404.html.
+var p = location.pathname;
+if (p.length > 1 && p.slice(-1) === '/') location.replace(p.replace(/\/+$/, '') + location.search + location.hash);
+</script></head>
+<body style="font-family:system-ui,sans-serif;background:#fff;color:#111;padding:40px 16px"><h1>Page not found</h1><p><a href="/">Go to ezersaves.com</a></p></body></html>
