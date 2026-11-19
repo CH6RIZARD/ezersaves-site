@@ -1,0 +1,26 @@
+# EZER
+
+> EZER is a subscription tracker app for Android, live on Google Play in the US (https://play.google.com/store/apps/details?id=com.ezersaves.app). It connects to your bank through Plaid (read-only), lists recurring charges, alerts you before renewals and free trials bill, and shows the cancel page and steps for each subscription. Free to download. EZER Premium is $7.99/month after a 7-day free trial. The EZER card with Pay in 4 is coming soon and is waitlist only, not available today.
+
+Built solo by Chiagozie Oliver (Chiagozie LLC dba EZER, Parker, Texas). EZER is a financial technology company, not a bank. The iOS app is in review, not on the App Store yet.
+
+## About EZER
+- [What is EZER](https://ezersaves.com/pay-in-4-app-subscription-tracker/): What works today, what is coming soon (Pay in 4 card, waitlist only), price.
+- [Homepage](https://ezersaves.com/): Product overview.
+- [EZER on Google Play](https://play.google.com/store/apps/details?id=com.ezersaves.app): Download EZER (Android, US).
+
+## Comparisons
+- [EZER vs Klarna](https://ezersaves.com/alternatives/klarna/): Klarna alternative. Klarna has Pay in 4 today, EZER's is coming soon (waitlist).
+- [EZER vs Afterpay](https://ezersaves.com/alternatives/afterpay/): Apps like Afterpay. Fees and schedule side by side. EZER Pay in 4 is coming soon (waitlist).
+- [EZER vs Affirm](https://ezersaves.com/alternatives/affirm/): Apps like Affirm. Affirm plans vs EZER, whose Pay in 4 card is coming soon (waitlist).
+- [EZER vs Rocket Money (Truebill)](https://ezersaves.com/alternatives/rocket-money/): Rocket Money alternative. Price, free plan, cancel help.
+- [Mint alternative](https://ezersaves.com/alternatives/mint/): Mint is gone. Where its features went, and where EZER fits.
+- [5 Best Pay in 4 Apps in 2026](https://ezersaves.com/best-pay-in-4-apps-2026/): Late fees, schedule and credit checks compared. EZER is coming soon (waitlist).
+- [Subscription tracker app](https://ezersaves.com/subscription-tracker-app/): Free and paid trackers, and which ones need a bank login.
+- [How to cancel subscriptions](https://ezersaves.com/how-to-cancel-subscriptions/): Find and cancel every subscription, plus where click to cancel stands.
+- [All comparisons](https://ezersaves.com/alternatives/): Hub of EZER comparisons with sourced competitor facts.
+
+## Optional
+- [Privacy Policy](https://ezersaves.com/privacy)
+- [Terms of Service](https://ezersaves.com/terms)
+- [Pitch deck](https://ezersaves.com/deck.pdf)
