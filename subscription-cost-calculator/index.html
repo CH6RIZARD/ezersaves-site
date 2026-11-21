@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscription Cost Calculator: How Much Do You Spend a Year? | EZER</title>
+<meta name="description" content="Tap the subscriptions you pay for and see the yearly total in seconds. Free, no sign-up, nothing leaves your browser.">
+<link rel="canonical" href="https://ezersaves.com/subscription-cost-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EZER">
+<meta property="og:title" content="Subscription Cost Calculator: How Much Do You Spend a Year?">
+<meta property="og:description" content="Tap the subscriptions you pay for and see the yearly total in seconds. Free, no sign-up.">
+<meta property="og:url" content="https://ezersaves.com/subscription-cost-calculator/">
+<meta property="og:image" content="https://ezersaves.com/assets/icon.png">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Chiagozie Oliver">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="/assets/ezer.css">
+<link rel="stylesheet" href="/assets/geo.css">
+<style>
+body{margin:0;background:#F7F3EA}
+.c-main{padding-top:clamp(36px,5cqi,64px);padding-bottom:72px}
+.c-h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(42px,7cqi,80px);line-height:1;margin:0 0 14px;max-width:820px;letter-spacing:-.01em}
+.c-h1 em{font-style:italic;color:#2E1165}
+.c-grid{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:24px;margin-top:34px;align-items:start}
+.c-card{border:1px solid #D9D0BF;border-radius:24px;padding:22px;background:#FFFDF8}
+.c-lab{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#6E6450}
+.c-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 20px}
+.c-chip{display:inline-flex;align-items:center;gap:9px;height:46px;padding:0 16px 0 9px;border-radius:999px;border:1px solid #D9D0BF;background:#F7F3EA;color:#1F1838;font:inherit;font-weight:600;font-size:14.5px;cursor:pointer;transition:transform .12s cubic-bezier(.23,1,.32,1),border-color .2s,background .2s}
+.c-chip:hover{border-color:#2E1165}
+.c-chip:active{transform:scale(.96)}
+.c-chip[aria-pressed=true]{border-color:#2E1165;background:#DCD3F0}
+.c-chip svg,.c-row svg,.c-bar svg{width:28px;height:28px;border-radius:8px;flex:none;outline:1px solid rgba(31,24,56,.1);outline-offset:-1px}
+.c-chip.plus{padding:0 18px;color:#2E1165}
+.c-row{display:grid;grid-template-columns:28px minmax(0,1fr) 108px 122px 44px;gap:8px;align-items:center;margin-bottom:8px}
+.c-row.custom{grid-template-columns:minmax(0,1fr) 108px 122px 44px}
+.c-row b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-price{position:relative;display:block}
+.c-price span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#6E6450;pointer-events:none}
+.c-row .c-price input{padding-left:27px}
+.c-row input,.c-row select,.c-x{font:inherit;font-size:16px;color:#1F1838;background:#F7F3EA;border:1px solid #D9D0BF;border-radius:14px;height:48px;padding:0 12px;min-width:0;width:100%}
+.c-x{padding:0;color:#6E6450;cursor:pointer}
+.c-x:hover{border-color:#2E1165;color:#2E1165}
+.c-empty{color:#6E6450;font-size:14.5px}
+.c-res{position:sticky;top:92px;background:#2E1165;border-color:#2E1165;color:#F7F3EA}
+.c-res .c-lab{color:#DCD3F0}
+.c-big{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(58px,9cqi,84px);line-height:1;margin:8px 0 18px;font-variant-numeric:tabular-nums}
+.c-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.c-stat{border:1px solid rgba(220,211,240,.3);border-radius:16px;padding:12px}
+.c-stat div:last-child{font-family:'Instrument Serif',Georgia,serif;font-size:24px;margin-top:4px;white-space:nowrap}
+.c-bars{margin-top:18px;display:grid;gap:11px}
+.c-bar{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;font-size:14.5px}
+.c-bar.custom{grid-template-columns:minmax(0,1fr) auto}
+.c-bar div{overflow-wrap:anywhere}
+.c-bar i{display:block;height:6px;border-radius:3px;background:#DCD3F0;margin-top:5px;transition:width .3s cubic-bezier(.23,1,.32,1)}
+.c-pitch{margin-top:20px;padding-top:18px;border-top:1px solid rgba(220,211,240,.3)}
+.c-pitch p{font-size:16.5px;line-height:1.5;margin:0 0 16px}
+.c-pitch strong{font-weight:700}
+.c-cta{width:100%;background:#F7F3EA;color:#2E1165}
+.c-cta:hover{background:#DCD3F0;color:#2E1165}
+.c-fine{font-size:13px;color:#DCD3F0;margin-top:12px;line-height:1.5}
+.c-app{display:grid;grid-template-columns:300px minmax(0,1fr);gap:clamp(28px,6cqi,72px);align-items:center;margin-top:88px}
+.c-app h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,4.4cqi,54px);line-height:1.05;margin:0 0 22px}
+.c-pt{display:flex;gap:16px;padding:18px 0;border-top:1px solid #D9D0BF}
+.c-pt .n{font-family:'Instrument Serif',Georgia,serif;font-size:30px;line-height:1;color:#2E1165;width:34px;flex:none}
+.c-pt b{display:block;font-size:17px;margin-bottom:2px}
+.c-pt span{color:#4F4760;font-size:15.5px;line-height:1.5}
+.c-faq{max-width:760px;margin-top:80px}
+.c-faq h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:40px;margin:0 0 10px}
+.c-faq details{border-top:1px solid #D9D0BF;padding:18px 0}
+.c-faq summary{cursor:pointer;font-weight:600;font-size:17px}
+.c-faq p{color:#4F4760;font-size:16px;line-height:1.6;margin:8px 0 0}
+.c-dock{position:fixed;z-index:30;left:0;right:0;bottom:0;display:none;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#2E1165;color:#F7F3EA;transform:translateY(110%);transition:transform .25s cubic-bezier(.23,1,.32,1)}
+.c-dock.on{transform:none}
+.c-dock{font-family:'DM Sans',system-ui,sans-serif}.c-dock a{text-decoration:none;box-sizing:border-box}
+.c-dock .c-lab{color:#DCD3F0}
+.c-dock .v{font-family:'Instrument Serif',Georgia,serif;font-size:28px;line-height:1}
+@media(max-width:900px){.c-grid{grid-template-columns:minmax(0,1fr)}.c-res{position:static}.c-dock{display:flex}.c-app{grid-template-columns:minmax(0,1fr)}.c-app img{max-width:260px;margin:0 auto}.foot{padding-bottom:84px}}
+@media(max-width:520px){.c-card{padding:16px;border-radius:20px}.c-row,.c-row.custom{grid-template-columns:28px minmax(0,1fr) minmax(0,1fr) 44px;row-gap:6px;margin-bottom:16px}.c-row b{grid-column:2/4}.c-row [data-n]{grid-column:1/4}.c-row .c-x{grid-column:4;grid-row:1}.c-row .c-price{grid-column:1/3;grid-row:2}.c-row select{grid-column:3/5;grid-row:2}.c-stat{padding:10px}.c-stat .c-lab{font-size:10px;letter-spacing:.08em;white-space:nowrap}.c-stat div:last-child{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.c-chip,.c-bar i,.c-dock{transition:none}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"EZER Subscription Cost Calculator","url":"https://ezersaves.com/subscription-cost-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"EZER","url":"https://ezersaves.com"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I find all my subscriptions?","acceptedAnswer":{"@type":"Answer","text":"Check three places: your bank and card statements for charges that repeat, the subscriptions list in your phone's app store, and your email for receipts. Or link your bank in EZER and it lists every recurring charge for you."}},{"@type":"Question","name":"How is the yearly cost worked out?","acceptedAnswer":{"@type":"Answer","text":"Weekly prices count 52 times a year, monthly prices 12 times, yearly prices once. Per month is the yearly total divided by 12, per day divided by 365."}},{"@type":"Question","name":"Is anything I type saved?","acceptedAnswer":{"@type":"Answer","text":"No. The maths runs in your browser. Nothing is stored and nothing is sent anywhere."}}]}]}</script>
+</head>
+<body>
+<div class="ez" style="background: #F7F3EA">
+<header class="top"><div class="wrap">
+<a href="/" aria-label="EZER home"><img src="/assets/wordmark-ink.png" alt="EZER" style="width: 80px"></a>
+<nav><a class="sec" href="/#product">Product</a><a class="sec" href="/#card">Card</a><a class="sec" href="/#radar">Radar</a><a class="sec" href="/deck.pdf">Deck</a><a class="btn btn-v btn-sm" href="https://play.google.com/store/apps/details?id=com.ezersaves.app">Download</a></nav>
+</div></header>
+<main class="wrap c-main">
+<h1 class="c-h1">How much do your subscriptions cost <em>a year?</em></h1>
+<p class="lede">Tap what you pay for. Type the price. Watch the number.</p>
+
+<div class="c-grid">
+<section class="c-card" aria-label="Your subscriptions">
+<div class="c-lab">Tap what you pay for</div>
+<div class="c-chips" id="chips"></div>
+<div id="rows"></div>
+<div class="c-empty" id="empty">Nothing added yet.</div>
+</section>
+
+<aside class="c-card c-res" aria-label="Your total">
+<div class="c-lab">You pay per year</div>
+<div class="c-big" id="y" aria-live="polite">$0.00</div>
+<div class="c-stats">
+<div class="c-stat"><div class="c-lab">Per month</div><div id="m">$0.00</div></div>
+<div class="c-stat"><div class="c-lab">Per day</div><div id="d">$0.00</div></div>
+<div class="c-stat"><div class="c-lab">5 years</div><div id="y5">$0.00</div></div>
+</div>
+<div class="c-bars" id="bars"></div>
+<div class="c-pitch">
+<p id="pitch"></p>
+<a class="btn c-cta" href="https://play.google.com/store/apps/details?id=com.ezersaves.app">See the ones you forgot</a>
+<div class="c-fine">Free on Google Play (Android, US). Read-only bank access through Plaid. Premium is $7.99 a month after a 7-day free trial.</div>
+</div>
+</aside>
+</div>
+
+<section class="c-app">
+<img class="phone" src="/assets/app-dashboard.png" alt="The EZER app: monthly burn and a calendar of upcoming subscription charges" width="300" loading="lazy">
+<div>
+<h2>You typed that from memory. EZER reads it from your bank.</h2>
+<div class="c-pt"><div class="n">1</div><div><b>Every recurring charge, listed</b><span>Streaming, apps, gyms, software. With the price, no typing.</span></div></div>
+<div class="c-pt"><div class="n">2</div><div><b>Trials flagged before they bill</b><span>A free trial about to turn into a charge shows up first.</span></div></div>
+<div class="c-pt"><div class="n">3</div><div><b>Renewals seen coming</b><span>An alert a few days before each one, and the cancel page when you want out.</span></div></div>
+<div style="margin-top:22px"><a class="btn btn-v" href="https://play.google.com/store/apps/details?id=com.ezersaves.app">Get EZER on Google Play</a></div>
+</div>
+</section>
+
+<section class="c-faq">
+<h2>Questions</h2>
+<details><summary>How do I find all my subscriptions?</summary><p>Check three places: your bank and card statements for charges that repeat, the subscriptions list in your phone's app store, and your email for receipts. Or link your bank in EZER and it lists every recurring charge for you.</p></details>
+<details><summary>How is the yearly cost worked out?</summary><p>Weekly prices count 52 times a year, monthly prices 12 times, yearly prices once. Per month is the yearly total divided by 12, per day divided by 365.</p></details>
+<details><summary>Is anything I type saved?</summary><p>No. The maths runs in your browser. Nothing is stored and nothing is sent anywhere.</p></details>
+</section>
+</main>
+<footer class="foot"><div class="wrap">
+<img src="/assets/wordmark-ink.png" alt="EZER" style="width: 72px">
+<nav aria-label="Legal"><a class="flink" href="/alternatives/">Compare</a><a class="flink" href="/deck.pdf">Pitch deck</a><a class="flink" href="/privacy">Privacy Policy</a><a class="flink" href="/terms">Terms of Service</a><a class="flink" href="/data-retention-policy">Data Retention</a><a class="flink" href="/delete-account">Delete account</a><a class="flink" href="mailto:daniel4chigs@gmail.com">Contact</a></nav>
+<div class="legal">© 2026 Chiagozie LLC, doing business as EZER · 7308 Forest Bend Drive, Parker, Texas</div>
+</div></footer>
+</div>
+
+<div class="c-dock" id="dock"><div><div class="c-lab">Per year</div><div class="v" id="dy">$0.00</div></div><a class="btn btn-sm c-cta" style="width:auto" href="https://play.google.com/store/apps/details?id=com.ezersaves.app">See the ones you forgot</a></div>
+
+<script>
+// Real brand marks from the app's own logo file (apps/mobile/assets/merchants/brandLogos.ts in the ezer repo).
+const LOGOS = {"netflix":{"d":"M5.398 0v.006c3.028 8.556 5.37 15.175 8.348 23.596 2.344.058 4.85.398 4.854.398-2.8-7.924-5.923-16.747-8.487-24zm8.489 0v9.63L18.6 22.951c-.043-7.86-.004-15.913.002-22.95zM5.398 1.05V24c1.873-.225 2.81-.312 4.715-.398v-9.22z","fg":"#E50914","bg":"#000000","inset":0.16},"hulu":{"d":"M14.707 15.957h1.912V8.043h-1.912zm-3.357-2.256a.517.517 0 01-.512.511H9.727a.517.517 0 01-.512-.511v-3.19H7.303v3.345c0 1.368.879 2.09 2.168 2.09h1.868c1.189 0 1.912-.856 1.912-2.09V10.51h-1.912c.01 0 .01 3.09.01 3.19zm10.75-3.19v3.19a.517.517 0 01-.512.511h-1.112a.517.517 0 01-.511-.511v-3.19h-1.912v3.345c0 1.368.878 2.09 2.167 2.09h1.868c1.19 0 1.912-.856 1.912-2.09V10.51zm-18.32 0H2.557c-.434 0-.645.11-.645.11V8.044H0v7.903h1.9v-3.179c0-.278.234-.511.512-.511h1.112c.278 0 .511.233.511.511v3.19h1.912v-3.446c0-1.445-.967-2-2.167-2Z","fg":"#FFFFFF","bg":"#1CE783","inset":0.1},"spotify":{"d":"M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z","fg":"#1DB954","bg":"#FFFFFF","inset":0.05},"icloud":{"d":"M13.762 4.29a6.51 6.51 0 0 0-5.669 3.332 3.571 3.571 0 0 0-1.558-.36 3.571 3.571 0 0 0-3.516 3A4.918 4.918 0 0 0 0 14.796a4.918 4.918 0 0 0 4.92 4.914 4.93 4.93 0 0 0 .617-.045h14.42c2.305-.272 4.041-2.258 4.043-4.589v-.009a4.594 4.594 0 0 0-3.727-4.508 6.51 6.51 0 0 0-6.511-6.27z","fg":"#3693F3","bg":"#FFFFFF","inset":0.1},"apple":{"d":"M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701","fg":"#000000","bg":"#FFFFFF","inset":0.2},"youtube":{"d":"M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z","fg":"#FF0000","bg":"#FFFFFF","inset":0.06},"adobe":{"d":"M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425zM8.884 1.376H0v21.248zm15.116 0h-8.884L24 22.624Z","fg":"#FA0F00","bg":"#FFFFFF","inset":0.12},"openai":{"d":"M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z","fg":"#FFFFFF","bg":"#000000","inset":0.18},"max":{"d":"M1.769 0A1.77 1.77 0 0 0 0 1.769V22.23A1.77 1.77 0 0 0 1.769 24H22.23A1.77 1.77 0 0 0 24 22.231V1.77A1.77 1.77 0 0 0 22.231 0zm12.485 3.28a4.301 4.301 0 0 1 4.3 4.302 4.301 4.301 0 0 1-1.993 3.63 6.085 6.085 0 0 1 1.054 3.422 6.085 6.085 0 0 1-6.085 6.085 6.085 6.085 0 0 1-6.085-6.085 6.085 6.085 0 0 1 4.66-5.916 4.301 4.301 0 0 1-.152-1.136 4.301 4.301 0 0 1 4.301-4.301zm0 1.849a2.453 2.453 0 0 0-2.453 2.453 2.453 2.453 0 0 0 2.453 2.453 2.453 2.453 0 0 0 2.453-2.453 2.453 2.453 0 0 0-2.453-2.453zm-2.724 5.268a4.237 4.237 0 0 0-4.237 4.237 4.237 4.237 0 0 0 4.237 4.237 4.237 4.237 0 0 0 4.237-4.237 4.237 4.237 0 0 0-4.237-4.237zm.032 2.54a1.781 1.781 0 1 1 0 3.562 1.781 1.781 0 0 1 0-3.562Z","fg":"#002BE7","bg":"#FFFFFF","inset":0.0},"hbo":{"d":"M7.042 16.896H4.414v-3.754H2.708v3.754H.01L0 7.22h2.708v3.6h1.706v-3.6h2.628zm12.043.046C21.795 16.94 24 14.689 24 11.978a4.89 4.89 0 0 0-4.915-4.92c-2.707-.002-4.09 1.991-4.432 2.795.003-1.207-1.187-2.632-2.58-2.634H7.59v9.674l4.181.001c1.686 0 2.886-1.46 2.888-2.713.385.788 1.72 2.762 4.427 2.76zm-7.665-3.936c.387 0 .692.382.692.817 0 .435-.305.817-.692.817h-1.33v-1.634zm.005-3.633c.387 0 .692.382.692.817 0 .436-.305.818-.692.818h-1.33V9.373zm1.77 2.607c.305-.039.813-.387.992-.61-.063.276-.068 1.074.006 1.35-.204-.314-.688-.701-.998-.74zm3.43 0a2.462 2.462 0 1 1 4.924 0 2.462 2.462 0 0 1-4.925 0zm2.462 1.936a1.936 1.936 0 1 0 0-3.872 1.936 1.936 0 0 0 0 3.872Z","fg":"#FFFFFF","bg":"#000000","inset":0.14},"dropbox":{"d":"M6 1.807L0 5.629l6 3.822 6.001-3.822L6 1.807zM18 1.807l-6 3.822 6 3.822 6-3.822-6-3.822zM0 13.274l6 3.822 6.001-3.822L6 9.452l-6 3.822zM18 9.452l-6 3.822 6 3.822 6-3.822-6-3.822zM6 18.371l6.001 3.822 6-3.822-6-3.822L6 18.371z","fg":"#0061FF","bg":"#FFFFFF","inset":0.16},"notion":{"d":"M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z","fg":"#000000","bg":"#FFFFFF","inset":0.16}};
+const NAMES = { netflix: 'Netflix', spotify: 'Spotify', youtube: 'YouTube Premium', hulu: 'Hulu', max: 'Max', icloud: 'iCloud+', openai: 'ChatGPT', adobe: 'Adobe', dropbox: 'Dropbox', notion: 'Notion' };
+const PER_YEAR = { week: 52, month: 12, year: 1 };
+// Yearly cost in cents, so sums never pick up float dust.
+const yearCents = (price, every) => Math.max(0, Math.round((parseFloat(price) || 0) * 100)) * PER_YEAR[every];
+console.assert(yearCents('9.99', 'month') === 11988 && yearCents('5', 'week') === 26000 && yearCents('x', 'year') === 0 && yearCents('-3', 'month') === 0, 'yearCents');
+
+const $ = id => document.getElementById(id);
+const money = c => (c / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const logo = k => { const l = LOGOS[k], s = 1 - 2 * l.inset, t = 24 * l.inset; return `<svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="${l.bg}"/><path d="${l.d}" fill="${l.fg}" transform="translate(${t} ${t}) scale(${s})"/></svg>`; };
+const REST = ' EZER reads your bank and lists every recurring charge, with the price.';
+const subs = []; // { key, name, price, every }
+
+function total() {
+  const each = subs.map(s => ({ s, c: yearCents(s.price, s.every) })).filter(e => e.c > 0).sort((a, b) => b.c - a.c);
+  const y = each.reduce((n, e) => n + e.c, 0);
+  $('y').textContent = $('dy').textContent = money(y);
+  $('m').textContent = money(Math.round(y / 12));
+  $('d').textContent = money(Math.round(y / 365));
+  $('y5').textContent = money(y * 5);
+  $('bars').innerHTML = each.map(({ s, c }) => `<div class="c-bar${s.key ? '' : ' custom'}">${s.key ? logo(s.key) : ''}<div>${esc(s.name || 'Other')}<i style="width:${Math.max(4, c / each[0].c * 100)}%"></i></div><span>${money(c)}</span></div>`).join('');
+  $('pitch').innerHTML = (y ? `<strong>${money(y)} a year</strong>, and that is only what you remember.` : 'That is only what you remember.') + REST;
+  $('dock').classList.toggle('on', y > 0);
+  $('empty').hidden = subs.length > 0;
+}
+function add(key) {
+  const s = { key, name: key ? NAMES[key] : '', price: '', every: 'month' };
+  subs.push(s);
+  const r = document.createElement('div');
+  r.className = 'c-row' + (key ? '' : ' custom');
+  r.innerHTML = (key ? logo(key) + `<b>${s.name}</b>` : '<input data-n aria-label="Subscription name" placeholder="Name" autocomplete="off">') +
+    `<label class="c-price"><span>$</span><input data-p aria-label="${key ? s.name + ' price' : 'Price'} in dollars" placeholder="0.00" inputmode="decimal" autocomplete="off"></label>` +
+    '<select aria-label="Billed every"><option value="week">Weekly</option><option value="month" selected>Monthly</option><option value="year">Yearly</option></select>' +
+    '<button class="c-x" type="button" aria-label="Remove">✕</button>';
+  r.oninput = () => { s.price = r.querySelector('[data-p]').value; s.every = r.querySelector('select').value; const n = r.querySelector('[data-n]'); if (n) s.name = n.value; total(); };
+  r.querySelector('.c-x').onclick = () => { subs.splice(subs.indexOf(s), 1); r.remove(); press(key, false); total(); };
+  $('rows').appendChild(r);
+  press(key, true);
+  total();
+  r.querySelector(key ? '[data-p]' : '[data-n]').focus();
+}
+const press = (key, on) => { const c = key && document.querySelector(`.c-chip[data-k="${key}"]`); if (c) c.setAttribute('aria-pressed', on); };
+$('chips').innerHTML = Object.keys(NAMES).filter(k => LOGOS[k]).map(k => `<button class="c-chip" type="button" data-k="${k}" aria-pressed="false">${logo(k)}${NAMES[k]}</button>`).join('') + '<button class="c-chip plus" type="button" data-k="">+ Something else</button>';
+$('chips').onclick = e => {
+  const c = e.target.closest('.c-chip'); if (!c) return;
+  const k = c.dataset.k, has = k && subs.find(s => s.key === k);
+  if (has) $('rows').children[subs.indexOf(has)].querySelector('[data-p]').focus(); else add(k);
+};
+total();
+</script>
+</body>
+</html>
