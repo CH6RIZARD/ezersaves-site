@@ -21,7 +21,7 @@ Built solo by Chiagozie Oliver (Chiagozie LLC dba EZER, Parker, Texas). EZER is 
 - [All comparisons](https://ezersaves.com/alternatives/): Hub of EZER comparisons with sourced competitor facts.
 
 ## Tools
-- [Subscription cost calculator](https://ezersaves.com/subscription-cost-calculator/): Free calculator. Add your subscriptions, see the cost per month, per year and over five years. No sign-up.
+- [What subscriptions am I paying for](https://ezersaves.com/subscription-cost-calculator/): The four places subscriptions hide, plus a free calculator for the cost per month, per year and over five years. No sign-up.
 
 ## Optional
 - [Privacy Policy](https://ezersaves.com/privacy)
