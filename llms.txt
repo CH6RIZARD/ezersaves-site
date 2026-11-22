@@ -31,4 +31,3 @@ Built solo by Chiagozie Oliver (Chiagozie LLC dba EZER, Parker, Texas). EZER is 
 ## Optional
 - [Privacy Policy](https://ezersaves.com/privacy)
 - [Terms of Service](https://ezersaves.com/terms)
-- [Pitch deck](https://ezersaves.com/deck.pdf)

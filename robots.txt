@@ -1,40 +1,53 @@
 User-agent: GPTBot
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: Claude-User
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: Bingbot
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: Googlebot
 Allow: /
+Disallow: /deck.pdf
 
 User-agent: *
 Allow: /
+Disallow: /deck.pdf
 
 Sitemap: https://ezersaves.com/sitemap.xml
